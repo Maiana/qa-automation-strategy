@@ -78,5 +78,5 @@ This portfolio reflects not only automation skills but also **product-oriented q
 ## Contact
 
 **Author:** Maiana Alebrant  
-**LinkedIn:** [Linkedin](https://www.linkedin.com/in/maianaalebrant/)]  
+**LinkedIn:** [Linkedin](https://www.linkedin.com/in/maianaalebrant/)  
 **Email:** <maiana.alebrant@gmail.com>
