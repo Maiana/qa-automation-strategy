@@ -1,8 +1,8 @@
-const { test } = require('@playwright/test');
-const { LoginPage } = require('../pages/LoginPage');
-const { InventoryPage } = require('../pages/InventoryPage');
-const { addProductToCart } = require('../helpers/cartHelpers');
-const users = require('../fixtures/users');
+import { test } from '@playwright/test';
+import LoginPage from '../pages/LoginPage.js';
+import InventoryPage from '../pages/InventoryPage.js';
+import { addProductToCart } from '../helpers/cartHelpers.js';
+import { users } from '../fixtures/users.js';
 
 test('@regression User can add product to cart', async ({ page }) => {
   const loginPage = new LoginPage(page);

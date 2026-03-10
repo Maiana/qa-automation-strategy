@@ -1,6 +1,6 @@
-const { expect } = require('@playwright/test');
+import { expect } from '@playwright/test';
 
-class CartPage {
+export default class CartPage {
   constructor(page) {
     this.page = page;
 
@@ -16,7 +16,6 @@ class CartPage {
   async clickCheckout() {
     await this.checkoutButton.click();
   }
-
 
   // -------------------
   // Assertions
@@ -34,5 +33,3 @@ class CartPage {
     await expect(this.cartItems).toHaveCount(0);
   }
 }
-
-module.exports = { CartPage };

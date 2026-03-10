@@ -1,11 +1,12 @@
-const { expect } = require('@playwright/test');
+import { expect } from '@playwright/test';
 
-class LoginPage {
+export default class LoginPage {
   constructor(page) {
     this.page = page;
-    this.usernameInput = '#user-name';
-    this.passwordInput = '#password';
-    this.loginButton = '#login-button';
+
+    this.usernameInput = page.locator('[data-test="username"]');
+    this.passwordInput = page.locator('[data-test="password"]');
+    this.loginButton = page.locator('[data-test="login-button"]');
     this.errorMessage = '[data-test="error"]';
   }
 
@@ -18,9 +19,9 @@ class LoginPage {
   }
 
   async login(username, password) {
-    await this.page.fill(this.usernameInput, username);
-    await this.page.fill(this.passwordInput, password);
-    await this.page.click(this.loginButton);
+    await this.usernameInput.fill(username);
+    await this.passwordInput.fill(password);
+    await this.loginButton.click();
   }
 
   getErrorMessage() {
@@ -36,14 +37,10 @@ class LoginPage {
   }
 
   async assertUserIsLocked() {
-    await expect(this.getErrorMessage())
-      .toContainText('locked out');
+    await expect(this.getErrorMessage()).toContainText('locked out');
   }
 
   async assertInvalidCredentialsError() {
-    await expect(this.getErrorMessage())
-      .toContainText('Username and password do not match');
+    await expect(this.getErrorMessage()).toContainText('Username and password do not match');
   }
 }
-
-module.exports = { LoginPage };

@@ -1,10 +1,10 @@
-const { test } = require('@playwright/test');
-const { LoginPage } = require('../pages/LoginPage');
-const { InventoryPage } = require('../pages/InventoryPage');
-const { CartPage } = require('../pages/CartPage');
-const { CheckoutPage } = require('../pages/CheckoutPage');
-const { addProductToCart } = require('../helpers/cartHelpers');
-const users = require('../fixtures/users');
+import { test } from '@playwright/test';
+import LoginPage from '../pages/LoginPage.js';
+import InventoryPage from '../pages/InventoryPage.js';
+import CartPage from '../pages/CartPage.js';
+import CheckoutPage from '../pages/CheckoutPage.js';
+import { addProductToCart } from '../helpers/cartHelpers.js';
+import { users } from '../fixtures/users.js';
 
 test('@smoke User completes checkout successfully', async ({ page }) => {
   const loginPage = new LoginPage(page);
