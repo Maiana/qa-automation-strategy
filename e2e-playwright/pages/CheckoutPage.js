@@ -1,10 +1,15 @@
-const { expect } = require('@playwright/test');
+import { expect } from '@playwright/test';
 
-class CheckoutPage {
+export default class CheckoutPage {
   constructor(page) {
     this.page = page;
     this.checkoutTitle = page.locator('.title');
     this.completeHeader = page.locator('.complete-header');
+    this.firstNameInput = page.locator('[data-test="firstName"]');
+    this.lastNameInput = page.locator('[data-test="lastName"]');
+    this.postalCodeInput = page.locator('[data-test="postalCode"]');
+    this.continueButton = page.locator('[data-test="continue"]');
+    this.finishCheckoutButton = page.locator('[data-test="finish"]');
   }
 
   // -------------------
@@ -12,14 +17,14 @@ class CheckoutPage {
   // -------------------
 
   async fillInformation(firstName, lastName, postalCode) {
-    await this.page.fill('[data-test="firstName"]', firstName);
-    await this.page.fill('[data-test="lastName"]', lastName);
-    await this.page.fill('[data-test="postalCode"]', postalCode);
-    await this.page.click('[data-test="continue"]');
+    await this.firstNameInput.fill(firstName);
+    await this.lastNameInput.fill(lastName);
+    await this.postalCodeInput.fill(postalCode);
+    await this.continueButton.click();
   }
 
   async finishCheckout() {
-    await this.page.click('[data-test="finish"]');
+    await this.finishCheckoutButton.click();
   }
 
   // -------------------
@@ -34,5 +39,3 @@ class CheckoutPage {
     await expect(this.completeHeader).toHaveText('Thank you for your order!');
   }
 }
-
-module.exports = { CheckoutPage };

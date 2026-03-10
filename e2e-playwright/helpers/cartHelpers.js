@@ -1,4 +1,4 @@
-async function addProductToCart(inventoryPage) {
+export async function addProductToCart(inventoryPage) {
   await inventoryPage.assertInventoryPageLoaded();
   await inventoryPage.assertCartBadgeIsEmpty();
 
@@ -6,7 +6,3 @@ async function addProductToCart(inventoryPage) {
 
   await inventoryPage.assertCartBadgeHasItems(1);
 }
-
-module.exports = {
-  addProductToCart
-};

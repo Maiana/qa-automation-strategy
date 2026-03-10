@@ -1,12 +1,12 @@
-const { expect } = require('@playwright/test');
+import { expect } from '@playwright/test';
 
-class InventoryPage {
+export default class InventoryPage {
   constructor(page) {
     this.page = page;
 
     this.cartBadge = page.locator('.shopping_cart_badge');
     this.addToCartButton = '.inventory_item button';
-    this.cartButton = '.shopping_cart_link';
+    this.cartButton = page.locator('.shopping_cart_link');
     this.inventoryTitle = page.locator('.title');
   }
 
@@ -19,7 +19,7 @@ class InventoryPage {
   }
 
   async openCart() {
-    await this.page.click(this.cartButton);
+    await this.cartButton.click();
   }
 
   // -------------------
@@ -39,5 +39,3 @@ class InventoryPage {
     await expect(this.cartBadge).toHaveCount(expectedCount);
   }
 }
-
-module.exports = { InventoryPage };
