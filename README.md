@@ -1,13 +1,13 @@
 # QA Automation Strategy Portfolio
 
 **Author:** Maiana Alebrant  
-**Role:** Senior/Lead QA / Quality Engineer  
+**Role:** Senior/Lead QA / Quality Engineer
 
 ---
 
 ## Overview
 
-This repository demonstrates my approach to **Quality Engineering** for a B2C e-commerce platform operating in the European market.  
+This repository demonstrates my approach to **Quality Engineering** for a B2C e-commerce platform operating in the European market.
 
 It combines **strategic documentation** and **automation examples** to showcase:
 
@@ -25,7 +25,7 @@ This portfolio reflects not only automation skills but also **product-oriented q
 ## Repository Structure
 
 | Folder / File          | Description                                                                                             |
-|------------------------|---------------------------------------------------------------------------------------------------------|
+| ---------------------- | ------------------------------------------------------------------------------------------------------- |
 | `01-quality-strategy/` | Strategic documentation: Test Strategy, Risk Analysis, Quality Roadmap, Metrics, Architecture Decisions |
 | `e2e-playwright/`      | Playwright automation examples: critical flows, page objects, fixtures, parallel execution              |
 | `e2e-nightwatch/`      | Nightwatch automation examples: legacy framework demonstration                                          |
@@ -51,9 +51,9 @@ This portfolio reflects not only automation skills but also **product-oriented q
 
 1. [Quality Strategy](01-quality-strategy/)
 2. [Playwright E2E Examples](e2e-playwright/)
-3. [Nightwatch E2E Examples](e2e-nightwatch/)
-4. [API Testing](api-tests/)
-5. [Visual Testing](visual-tests/)
+3. [Nightwatch E2E Examples](e2e-nightwatch/) [In Progress]
+4. [API Testing](api-tests/) [In Progress]
+5. [Visual Testing](visual-tests/) [In Progress]
 6. [CI/CD Pipeline](.github/workflows/)
 
 ---
@@ -70,7 +70,7 @@ This portfolio reflects not only automation skills but also **product-oriented q
 
 1. Browse `01-quality-strategy/` for strategic documentation.
 2. Explore automation examples under `e2e-playwright/`, `e2e-nightwatch/`, `api-tests/` and `visual-tests/`.
-3. CI/CD workflows are configured for automated execution.
+3. CI/CD workflows are configured for automated execution. ![CI](https://github.com/Maiana/qa-automation-strategy/actions/workflows/playwright.yml/badge.svg)
 4. This repository is meant to showcase approach, architecture, and best practices rather than production-ready automation.
 
 ---
